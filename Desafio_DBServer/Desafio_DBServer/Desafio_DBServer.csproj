@@ -1,0 +1,58 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\Images\Filter.png" />
+    <None Remove="Resources\Images\PikachuBig.png" />
+    <None Remove="Resources\Images\PokeBall.png" />
+    <None Remove="Resources\Images\PokeballBig.png" />
+    <None Remove="Resources\Images\PokeballPikachu.gif" />
+    <None Remove="Resources\Images\Pokemon.png" />
+    <None Remove="Resources\Images\PokemonBig.png" />
+    <None Remove="Resources\Images\StarOff.png" />
+    <None Remove="Resources\Images\StarOn.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Images\Filter.png" />
+    <EmbeddedResource Include="Resources\Images\PikachuBig.png" />
+    <EmbeddedResource Include="Resources\Images\PokeBall.png" />
+    <EmbeddedResource Include="Resources\Images\PokeballBig.png" />
+    <EmbeddedResource Include="Resources\Images\PokeballPikachu.gif" />
+    <EmbeddedResource Include="Resources\Images\Pokemon.png" />
+    <EmbeddedResource Include="Resources\Images\PokemonBig.png" />
+    <EmbeddedResource Include="Resources\Images\StarOff.png" />
+    <EmbeddedResource Include="Resources\Images\StarOn.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Rg.Plugins.Popup" Version="2.0.0.5" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.7.335" />
+    <PackageReference Include="SQLiteNetExtensions" Version="2.1.0" />
+    <PackageReference Include="Xamarin.Forms" Version="4.8.0.1451" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
+    <PackageReference Include="Xamarin.Forms.Extended.InfiniteScrolling" Version="1.0.0-preview2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Views\ListPokemonView.xaml.cs">
+      <DependentUpon>ListPokemonView.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Views\PokemonView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

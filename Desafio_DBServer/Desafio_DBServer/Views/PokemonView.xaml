@@ -1,0 +1,262 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                 xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+                 xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+                 xmlns:converters="clr-namespace:Desafio_DBServer.Converters"
+                 x:Class="Desafio_DBServer.Views.PokemonView">
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation 
+            PositionIn="Center"
+            PositionOut="Center"
+            ScaleIn="1.2"
+            ScaleOut="0.8"
+            DurationIn="400"
+            DurationOut="300"
+            EasingIn="SinOut"
+            EasingOut="SinIn"
+            HasBackgroundAnimation="True"/>
+    </pages:PopupPage.Animation>
+
+    <StackLayout>
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <StackLayout Grid.Row="0"
+                   BackgroundColor="Black"
+                   Opacity="0.6"
+                   HorizontalOptions="FillAndExpand"
+                   VerticalOptions="FillAndExpand">
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding CloseCommand}"/>
+                </StackLayout.GestureRecognizers>
+            </StackLayout>
+
+            <Frame 
+                Grid.Row="0" 
+                HorizontalOptions="CenterAndExpand" 
+                VerticalOptions="Center" 
+                WidthRequest="300"
+                HeightRequest="500"
+                Margin="15"
+                BackgroundColor="WhiteSmoke"
+                CornerRadius="15"
+                HasShadow="True">
+                <StackLayout
+                    HorizontalOptions="FillAndExpand" 
+                    VerticalOptions="FillAndExpand">
+                    <StackLayout 
+                        HorizontalOptions="FillAndExpand" 
+                        VerticalOptions="FillAndExpand" 
+                        Orientation="Vertical"
+                        Spacing="0"
+                        IsVisible="{Binding IsBusy, Converter={converters:BooleanInverterConverter}}">
+                        <Frame 
+                            Margin="0"
+                            Padding="0"
+                            WidthRequest="300"
+                            HeightRequest="300"
+                            HorizontalOptions="Start"
+                            VerticalOptions="Start"
+                            HasShadow="False"
+                            BackgroundColor="#ededed"
+                            CornerRadius="20">
+                            <StackLayout
+                                Padding="0"
+                                Margin="0"
+                                Spacing="0">
+                                <Image 
+                                    HorizontalOptions="CenterAndExpand" 
+                                    VerticalOptions="CenterAndExpand"
+                                    Margin="0"
+                                    WidthRequest="250" 
+                                    HeightRequest="250"
+                                    IsVisible="{Binding SimplePokemon.LoadedImage}"
+                                    Source="{Binding SimplePokemon.PokemonImage}">
+                                </Image>
+                                <ActivityIndicator 
+                                    HorizontalOptions="CenterAndExpand" 
+                                    VerticalOptions="CenterAndExpand"
+                                    Margin="0"
+                                    WidthRequest="50" 
+                                    HeightRequest="50"
+                                    Color="#5c5959"
+                                    IsRunning="true"
+                                    IsVisible="{Binding SimplePokemon.LoadedImage, Converter={converters:BooleanInverterConverter}}">
+                                </ActivityIndicator>
+                            </StackLayout>
+                        </Frame>
+                        <Frame 
+                            HorizontalOptions="CenterAndExpand"
+                            VerticalOptions="Start"
+                            WidthRequest="70"
+                            HeightRequest="70"
+                            BackgroundColor="WhiteSmoke"
+                            CornerRadius="70"
+                            Margin="0, -35, 0, 0"
+                            Padding="0">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding ChangeFavoriteCommand}"/>
+                            </Frame.GestureRecognizers>
+                            <Image
+                                HorizontalOptions="CenterAndExpand"
+                                VerticalOptions="CenterAndExpand"
+                                WidthRequest="50"
+                                HeightRequest="50"
+                                Source="{Binding FavoriteImageSource}"/>
+                        </Frame>
+                        <Label 
+                            Text="{Binding Pokemon.IdString}"
+                            HorizontalOptions="CenterAndExpand"
+                            Margin="0, 5, 0, 0"
+                            FontAttributes="Bold"
+                            TextColor="Gray"/>
+                        <Label 
+                            Text="{Binding SimplePokemon.Name}" 
+                            FontAttributes="Bold" 
+                            FontSize="24"
+                            TextColor="Black"
+                            VerticalOptions="Center"
+                            HorizontalOptions="CenterAndExpand"/>
+
+                        <BoxView 
+                            HeightRequest="1"
+                            BackgroundColor="Gray"
+                            HorizontalOptions="FillAndExpand"
+                            Margin="20, 10, 20, 10"/>
+
+                        <StackLayout
+                            HorizontalOptions="CenterAndExpand"
+                            Orientation="Horizontal"
+                            Margin="0, 10, 0, 0"
+                            Spacing="0">
+                            <Label 
+                                Text="Altura: "
+                                FontAttributes="Bold"/>
+                            <Label 
+                                Text="{Binding Pokemon.HeightString}"
+                                FontAttributes="Bold"/>
+
+                            <Label 
+                                Text="Peso: "
+                                FontAttributes="Bold"
+                                Margin="30, 0, 0, 0"/>
+                            <Label 
+                                Text="{Binding Pokemon.WeightString}"
+                                FontAttributes="Bold"/>
+                        </StackLayout>
+                        
+                        <StackLayout
+                            HorizontalOptions="FillAndExpand"
+                            VerticalOptions="EndAndExpand"
+                            Orientation="Horizontal"
+                            Margin="0, 10, 0, 0"
+                            Padding="5"
+                            HeightRequest="30"
+                            Spacing="5">
+                            <Frame 
+                                VerticalOptions="CenterAndExpand"
+                                HorizontalOptions="CenterAndExpand"
+                                Padding="0"
+                                Margin="0"
+                                WidthRequest="110"
+                                BackgroundColor="{Binding Type1.BackgroundColor1}"
+                                IsVisible="{Binding Type1.Visible}"
+                                CornerRadius="5"
+                                HeightRequest="30">
+                                <StackLayout 
+                                    HorizontalOptions="FillAndExpand"
+                                    VerticalOptions="FillAndExpand"
+                                    Margin="0"
+                                    Padding="0">
+                                    <BoxView 
+                                        BackgroundColor="{Binding Type1.BackgroundColor2}"
+                                        HorizontalOptions="FillAndExpand"
+                                        VerticalOptions="Start"
+                                        HeightRequest="15"
+                                        WidthRequest="70"/>
+                                    <Label
+                                        Text="{Binding Type1.Text}"
+                                        TextColor="{Binding Type1.TextColor}"
+                                        FontSize="14"
+                                        Margin="0, -15, 0, 0"
+                                        HorizontalOptions="CenterAndExpand"/>
+                                </StackLayout>
+                            </Frame>
+
+                            <Frame 
+                                VerticalOptions="CenterAndExpand"
+                                HorizontalOptions="CenterAndExpand"
+                                Padding="0"
+                                Margin="0"
+                                WidthRequest="110"
+                                BackgroundColor="{Binding Type2.BackgroundColor1}"
+                                IsVisible="{Binding Type2.Visible}"
+                                CornerRadius="5"
+                                HeightRequest="30">
+                                <StackLayout 
+                                    HorizontalOptions="FillAndExpand"
+                                    VerticalOptions="FillAndExpand"
+                                    Margin="0"
+                                    Padding="0">
+                                    <BoxView 
+                                        BackgroundColor="{Binding Type2.BackgroundColor2}"
+                                        HorizontalOptions="FillAndExpand"
+                                        VerticalOptions="Start"
+                                        HeightRequest="15"
+                                        WidthRequest="70"/>
+                                    <Label
+                                        Text="{Binding Type2.Text}"
+                                        TextColor="{Binding Type2.TextColor}"
+                                        FontSize="14"
+                                        Margin="0, -15, 0, 0"
+                                        HorizontalOptions="CenterAndExpand"/>
+                                </StackLayout>
+                            </Frame>
+
+                            <Frame 
+                                VerticalOptions="CenterAndExpand"
+                                HorizontalOptions="CenterAndExpand"
+                                Padding="0"
+                                Margin="0"
+                                WidthRequest="110"
+                                BackgroundColor="{Binding Type3.BackgroundColor1}"
+                                IsVisible="{Binding Type3.Visible}"
+                                CornerRadius="5"
+                                HeightRequest="30">
+                                <StackLayout 
+                                    HorizontalOptions="FillAndExpand"
+                                    VerticalOptions="FillAndExpand"
+                                    Margin="0"
+                                    Padding="0">
+                                    <BoxView 
+                                        BackgroundColor="{Binding Type3.BackgroundColor2}"
+                                        HorizontalOptions="FillAndExpand"
+                                        VerticalOptions="Start"
+                                        HeightRequest="15"
+                                        WidthRequest="70"/>
+                                    <Label
+                                        Text="{Binding Type3.Text}"
+                                        TextColor="{Binding Type3.TextColor}"
+                                        FontSize="14"
+                                        Margin="0, -15, 0, 0"
+                                        HorizontalOptions="CenterAndExpand"/>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+                    </StackLayout>
+
+                    <ActivityIndicator 
+                        IsRunning="{Binding IsBusy}"
+                        IsVisible="{Binding IsBusy}" 
+                        HorizontalOptions="CenterAndExpand"
+                        VerticalOptions="CenterAndExpand"
+                        Color="DarkGray" 
+                        WidthRequest="200"/>
+                </StackLayout>
+            </Frame>
+        </Grid>
+    </StackLayout>
+</pages:PopupPage>
