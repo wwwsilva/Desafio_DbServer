@@ -239,14 +239,13 @@ namespace Desafio_DBServer.ViewModels
 
                 if (SimplePokemon.Favorite)
                 {
-                    if (ContainerHelper.DataBaseService.GetData_PK<DbFavorite>(SimplePokemon.Id) == null)
-                    {
-                        var favorite = new DbFavorite(SimplePokemon.Id);
+                    var favorite = new DbFavorite(SimplePokemon.Id);
+                    var dbFav = ContainerHelper.DataBaseService.GetData_PK<DbFavorite>(SimplePokemon.Id);
+                    if (dbFav == null)
                         favorite.Insert(ContainerHelper.DataBaseService);
 
-                        if (ContainerHelper.Favorites.Any(f => f.Id == SimplePokemon.Id) == false)
-                            ContainerHelper.Favorites.Add(favorite);
-                    }
+                    if (ContainerHelper.Favorites.Any(f => f.Id == SimplePokemon.Id) == false)
+                        ContainerHelper.Favorites.Add(favorite);
                 }
                 else
                 {

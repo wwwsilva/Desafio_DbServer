@@ -167,7 +167,7 @@
                             <Frame 
                                 Grid.Row="0"
                                 HorizontalOptions="FillAndExpand"
-                                CornerRadius="70"
+                                CornerRadius="50"
                                 HasShadow="True"
                                 BackgroundColor="#5c5959"
                                 Padding="0"
