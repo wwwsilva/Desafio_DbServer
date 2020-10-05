@@ -18,7 +18,7 @@ namespace Desafio_DBServer
 
             ContainerHelper.DataBaseService.Init("pokedex");
 
-            ContainerHelper.NavigationService.StartNavigate<ListPokemonViewModel>("Pokedex", false);
+            ContainerHelper.NavigationService.StartNavigate<InitViewModel>("Pokedex", true);
         }
 
         protected override void OnStart()

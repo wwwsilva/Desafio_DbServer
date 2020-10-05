@@ -11,6 +11,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\Images\BackgroundImage.png" />
     <None Remove="Resources\Images\Filter.png" />
     <None Remove="Resources\Images\PikachuBig.png" />
     <None Remove="Resources\Images\PokeBall.png" />
@@ -23,6 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Resources\Images\BackgroundImage.png" />
     <EmbeddedResource Include="Resources\Images\Filter.png" />
     <EmbeddedResource Include="Resources\Images\PikachuBig.png" />
     <EmbeddedResource Include="Resources\Images\PokeBall.png" />
@@ -51,6 +53,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Views\InitView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\PokemonView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

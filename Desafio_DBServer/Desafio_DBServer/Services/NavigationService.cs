@@ -37,7 +37,10 @@ namespace Desafio_DBServer.Services
                 {
                     case ViewTypeEnum.Page:
                         NavigationHelper.CallAccessPage(retorno.viewModel);
-                        await GetNavigationPage().PushAsync(retorno.view as Page, false);
+                        if (Device.RuntimePlatform == Device.UWP)
+                            await GetNavigationPage().PushAsync(retorno.view as Page, false);
+                        else
+                            await GetNavigationPage().PushAsync(retorno.view as Page, false);
                         break;
 
                     case ViewTypeEnum.Popup:
@@ -47,7 +50,7 @@ namespace Desafio_DBServer.Services
 
                 return retorno;
             }
-            catch
+            catch (Exception ex)
             {
                 return null;
             }

@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:converters="clr-namespace:Desafio_DBServer.Converters"
+             mc:Ignorable="d"
+             NavigationPage.HasNavigationBar="False"
+             x:Class="Desafio_DBServer.Views.InitView">
+    <ContentPage.Content>
+        <Grid
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Image
+                Grid.Row="0"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"
+                Aspect="Fill"
+                BackgroundColor="Black"
+                Opacity="0.3"
+                Source="{Binding Converter={converters:ImageConverter},ConverterParameter=BackgroundImage.png}"/>
+
+            <Frame 
+                Grid.Row="0"
+                x:Name="frmBase"
+                PropertyChanged="frmBase_PropertyChanged"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="CenterAndExpand"
+                WidthRequest="900"
+                HeightRequest="600"
+                Padding="0">
+                <Grid
+                    BackgroundColor="Transparent"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand"
+                    Padding="0"
+                    Margin="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Image
+                        x:Name="imgBackground"
+                        Grid.Row="0"
+                        Opacity="0"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="FillAndExpand"
+                        Aspect="AspectFill"
+                        Source="{Binding Converter={converters:ImageConverter},ConverterParameter=BackgroundImage.png}"/>
+
+                    <Image
+                        x:Name="imgTitle"
+                        Grid.Row="0"
+                        Opacity="0"
+                        Scale="0"
+                        Margin="0, 0, 0, -4"
+                        HorizontalOptions="CenterAndExpand"
+                        VerticalOptions="StartAndExpand"
+                        WidthRequest="300"
+                        Source="{Binding Converter={converters:ImageConverter},ConverterParameter=PokemonBig.png}"/>
+                    
+                    <Image
+                        x:Name="imgPokeball"
+                        Grid.Row="0"
+                        Margin="0, 0, 0, -4"
+                        HorizontalOptions="CenterAndExpand"
+                        VerticalOptions="EndAndExpand"
+                        WidthRequest="90"
+                        HeightRequest="90"
+                        Scale="0"
+                        Source="{Binding Converter={converters:ImageConverter},ConverterParameter=PokeballBig.png}"/>
+
+                    <Image
+                        x:Name="imgPikachu"
+                        Grid.Row="0"
+                        Margin="-100, 0, 0, -4"
+                        HorizontalOptions="CenterAndExpand"
+                        VerticalOptions="EndAndExpand"
+                        WidthRequest="180"
+                        HeightRequest="180"
+                        Opacity="0"
+                        Source="{Binding Converter={converters:ImageConverter},ConverterParameter=PikachuBig.png}"/>
+
+                </Grid>
+            </Frame>
+        </Grid>
+        
+    </ContentPage.Content>
+</ContentPage>
