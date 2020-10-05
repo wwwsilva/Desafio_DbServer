@@ -5,10 +5,10 @@
 Olá.
 
 Este é o App Pokedex Desafio DbServer, desenvolvido para as plataformas  Android, iOS e UWP.
-Utilizando a arquitetura MVVM, neste aplicativo serão encontradas três telas:
-	1. Tela de Entrada com Animação.
-	2. Tela de Listagem de Pokemons com Filtro.
-	3. Tela de Detalhes do Pokemon.
+Utilizando a arquitetura MVVM, neste aplicativo serão encontradas três telas:  
+	1. Tela de Entrada com Animação.  
+	2. Tela de Listagem de Pokemons com Filtro.  
+	3. Tela de Detalhes do Pokemon.  
 
 Espero que gostem e que olhem para o resultado e para o código com esmero, assim como foi o desenvolvimento nesses dois dias.
 
@@ -31,11 +31,11 @@ Espero que gostem e que olhem para o resultado e para o código com esmero, assi
 	
 
 ### Services
-Para o desenvolvimento dos serviços que o App faz uso, utilizei classes que costumo usar em alguns projetos. 
-	* ApiService;
-	* DataBaseService;
-	* MessageService;
-	* NavigationService;
+Para o desenvolvimento dos serviços que o App faz uso, utilizei classes que costumo usar em alguns projetos.   
+	* ApiService;  
+	* DataBaseService;  
+	* MessageService;  
+	* NavigationService;  
 
 ### Ícones
 Os ícones utilizados na aplicação estão adicionados apenas no projeto **portable**, na pasta Resources. Para o gerenciamento desses recursos, há uma classe chamada 'ImageHelper' que, em conjunto com o 'ImageConverter', gerencia a utilização dos arquivos e cria um cache em memória do que está sendo utilizado. Esta mesma classe poderia ter uma ligação com o banco de dados e gerenciar as imagens dos pokémons, porém não pude implementar a tempo.
