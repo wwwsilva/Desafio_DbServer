@@ -4,7 +4,7 @@
 
 Olá.
 
-Este é o App Pokedex Desafio DbServer, desenvolvido para as plataformas  Android, iOS e UWP.
+Este é o App Pokedex Desafio DbServer, desenvolvido para as plataformas  Android, iOS e UWP.  
 Utilizando a arquitetura MVVM, neste aplicativo serão encontradas três telas:  
 	1. Tela de Entrada com Animação.  
 	2. Tela de Listagem de Pokemons com Filtro.  
@@ -15,19 +15,19 @@ Espero que gostem e que olhem para o resultado e para o código com esmero, assi
 -----------------------------------
 
 ### TELAS
-1. **Tela de Entrada**
-	A tela de entrada contém apenas uma simples animação de entrada do aplicativo.
-	Para as animações utilizei apenas as funcionalidades já existentes no Xamarin Forms (ex.: FadeTo, RotateTo, etc). 
-	Após um tempo pré-determinado a navegação é realizada para a tela seguinte.
+1. **Tela de Entrada**  <br/>
+	A tela de entrada contém apenas uma simples animação de entrada do aplicativo.  <br/>
+	Para as animações utilizei apenas as funcionalidades já existentes no Xamarin Forms (ex.: FadeTo, RotateTo, etc).   <br/>
+	Após um tempo pré-determinado a navegação é realizada para a tela seguinte.  <br/>
 
-2. **Tela de Listagem**
-	O design da tela de listagem é composto por elementos do Xamarin Forms sem necessidade de utilização de componentes ou controles customizados.
-	Para a paginação utilizei a biblioteca 'Xamarin.Forms.Extended.InfiniteScrolling' que trata de maneira automatizada a necessidade de mais registros enquanto o usuário faz a rolagem, bastando implementar o evento de carregamento.
-	A lista de pokémons é sempre buscada na API, afim de exemplificar melhor a funcionalidade da paginação, enquanto que as imagens são armazenadas em um banco SQLite após o primeiro download.
+2. **Tela de Listagem**  <br/>
+	O design da tela de listagem é composto por elementos do Xamarin Forms sem necessidade de utilização de componentes ou controles customizados.  <br/>
+	Para a paginação utilizei a biblioteca 'Xamarin.Forms.Extended.InfiniteScrolling' que trata de maneira automatizada a necessidade de mais registros enquanto o usuário faz a rolagem, bastando implementar o evento de carregamento.  <br/>
+	A lista de pokémons é sempre buscada na API, afim de exemplificar melhor a funcionalidade da paginação, enquanto que as imagens são armazenadas em um banco SQLite após o primeiro download.  <br/>
 
-3. **Tela de Detalhes do Pokemon**
-	A tela de detalhes consiste em uma PopupPage fornecida pela biblioteca 'Rg.Plugins.Popup', que já muito conhecida. Assim como a tela de listagem, também não foi necessário desenvolvimento de nenhum componente ou controle customizado. 
-	Os dados do pokémon são buscados na API na primeira vez que ele é acessado e após isso ele é armazenado no bando SQLite.
+3. **Tela de Detalhes do Pokemon**  <br/>
+	A tela de detalhes consiste em uma PopupPage fornecida pela biblioteca 'Rg.Plugins.Popup', que já muito conhecida. Assim como a tela de listagem, também não foi necessário desenvolvimento de nenhum componente ou controle customizado.   <br/>
+	Os dados do pokémon são buscados na API na primeira vez que ele é acessado e após isso ele é armazenado no bando SQLite.  
 	
 
 ### Services
@@ -38,7 +38,8 @@ Para o desenvolvimento dos serviços que o App faz uso, utilizei classes que cos
 	* NavigationService;  
 
 ### Ícones
-Os ícones utilizados na aplicação estão adicionados apenas no projeto **portable**, na pasta Resources. Para o gerenciamento desses recursos, há uma classe chamada 'ImageHelper' que, em conjunto com o 'ImageConverter', gerencia a utilização dos arquivos e cria um cache em memória do que está sendo utilizado. Esta mesma classe poderia ter uma ligação com o banco de dados e gerenciar as imagens dos pokémons, porém não pude implementar a tempo.
+Os ícones utilizados na aplicação estão adicionados apenas no projeto **portable**, na pasta Resources.   
+Para o gerenciamento desses recursos, há uma classe chamada 'ImageHelper' que, em conjunto com o 'ImageConverter', gerencia a utilização dos arquivos e cria um cache em memória do que está sendo utilizado. Esta mesma classe poderia ter uma ligação com o banco de dados e gerenciar as imagens dos pokémons, porém não pude implementar a tempo.
 
 ### Acesso a API
 Para acessar a API foi criada a classe ApiService que contém métodos Get genéricos, tanto para objetos quanto para arquivos.
