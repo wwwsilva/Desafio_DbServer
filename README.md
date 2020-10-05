@@ -9,6 +9,7 @@ Utilizando a arquitetura MVVM, neste aplicativo serão encontradas três telas:
 	1. Tela de Entrada com Animação.
 	2. Tela de Listagem de Pokemons com Filtro.
 	3. Tela de Detalhes do Pokemon.
+
 Espero que gostem e que olhem para o resultado e para o código com esmero, assim como foi o desenvolvimento nesses dois dias.
 
 -----------------------------------
