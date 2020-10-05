@@ -8,6 +8,7 @@
              xmlns:scroll="clr-namespace:Xamarin.Forms.Extended;assembly=Xamarin.Forms.Extended.InfiniteScrolling"
              xmlns:behaviors="clr-namespace:Desafio_DBServer.Behaviors"
              x:Class="Desafio_DBServer.Views.ListPokemonView"
+             NavigationPage.HasNavigationBar="False"
              Background="#424242">
 
     <ContentPage.Resources>
