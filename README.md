@@ -9,6 +9,7 @@ Utilizando a arquitetura MVVM, neste aplicativo serão encontradas três telas:
 	1. Tela de Entrada com Animação.
 	2. Tela de Listagem de Pokemons com Filtro.
 	3. Tela de Detalhes do Pokemon.
+Espero que gostem e que olhem para o resultado e para o código com esmero, assim como foi o desenvolvimento nesses dois dias.
 
 -----------------------------------
 
@@ -53,8 +54,8 @@ Infelizmente não consegui deixar a injeção de dependências como eu queria a 
 
 ### Observações
 1. Como não tenho MAC disponível, não pude testar a compilação para IOS. Os testes foram realizados em Android e UWP.
-3. Gosto de utilizar o mínimo de pacotes de terceiros. Por experiência, atualizações de versão costumam ser penosas quando há um uso excessivo de dependências de terceiros (mas nem por isso precisamos reinventar a roda). 
-4. Utilização de CustomRenders no código não é um problema para mim, mas por uma escolha pessoal, prefiro evitar seu uso afim de objetivar ao máximo o desenvolvimento no projeto portable.
+2. Gosto de utilizar o mínimo de pacotes de terceiros. Por experiência, atualizações de versão costumam ser penosas quando há um uso excessivo de dependências de terceiros (mas nem por isso precisamos reinventar a roda). 
+3. Utilização de CustomRenders no código não é um problema para mim, mas por uma escolha pessoal, prefiro evitar seu uso afim de objetivar ao máximo o desenvolvimento no projeto portable.
 
 ### IMPORTANTE
 **Se for executar em UWP, a versão mínima é a 1809 (build 17763).**
@@ -62,5 +63,5 @@ Infelizmente não consegui deixar a injeção de dependências como eu queria a 
 
 ---------
 
-Agradeço a oportunidade de mostrar meu trabalho e espero que em um futuro próximo estejamos trabalhando em grandes projetos juntos.
+Agradeço a oportunidade de mostrar meu trabalho e espero que em um futuro próximo estejamos trabalhando juntos em grandes projetos.
  ; D
