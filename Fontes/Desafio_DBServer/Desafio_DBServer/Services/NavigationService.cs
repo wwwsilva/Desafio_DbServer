@@ -85,62 +85,6 @@ namespace Desafio_DBServer.Services
             }
         }
 
-        public async Task StartNavigate<TMasterViewModel, TViewModel>(string titleMaster, 
-                                                                      string titleDetail) where TMasterViewModel : BaseViewModel 
-                                                                                          where TViewModel : BaseViewModel
-        {
-            try
-            {
-                ResponseNavigationServiceModel retornoMasterView = await ResolveView<TMasterViewModel>(titleMaster);
-                if (retornoMasterView == null)
-                    return;
-
-                ResponseNavigationServiceModel retornoDetailView = await ResolveView<TViewModel>(titleDetail);
-                if (retornoDetailView == null)
-                    return;
-
-                Application.Current.MainPage = new MasterDetailPage()
-                {
-                    Master = retornoMasterView.view as Page,
-                    Detail = new NavigationPage(retornoDetailView.view as Page),
-                    MasterBehavior = masterBehavior
-                };
-
-                //Desativa o comportamento chato de arrastar para a direita e o menu lateral ser exibido.
-                if (Device.RuntimePlatform == Device.iOS)
-                    (Application.Current.MainPage as MasterDetailPage).IsGestureEnabled = false;
-
-                NavigationHelper.CallAccessPage(retornoDetailView.viewModel);
-            }
-            catch { }
-        }
-
-        public async Task SetNavigateDetailPage<TViewModel>(object masterPage, 
-                                                            string titleDetail, 
-                                                            NavigationParameterHelper parameters = null) where TViewModel : BaseViewModel
-        {
-            try
-            {
-                ResponseNavigationServiceModel retornoDetailView = await ResolveView<TViewModel>(titleDetail, parameters);
-                if (retornoDetailView == null)
-                    return;
-
-                if (Device.RuntimePlatform == Device.iOS)
-                    (masterPage as MasterDetailPage).IsGestureEnabled = false;
-
-                NavigationHelper.CallAccessPage(retornoDetailView.viewModel);
-
-                try
-                {
-                    ((MasterDetailPage)masterPage).Detail.BindingContext = null;
-                }
-                catch { }
-
-                ((MasterDetailPage)masterPage).Detail = new NavigationPage(retornoDetailView.view as Page);
-            }
-            catch { }
-        }
-
         public async Task Back(bool IsPopup = false)
         {
             try

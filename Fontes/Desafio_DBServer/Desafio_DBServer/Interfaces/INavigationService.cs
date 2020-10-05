@@ -16,14 +16,6 @@ namespace Desafio_DBServer.Interfaces
                                                                        bool navigationPage = true,
                                                                        NavigationParameterHelper parameters = null) where TViewModel : BaseViewModel;
 
-        Task StartNavigate<TMasterViewModel, TViewModel>(string titleMaster,
-                                                         string titleDetail) where TMasterViewModel : BaseViewModel
-                                                                             where TViewModel : BaseViewModel;
-
-        Task SetNavigateDetailPage<TViewModel>(object masterPage,
-                                               string titleDetail,
-                                               NavigationParameterHelper parameters = null) where TViewModel : BaseViewModel;
-
         Task Back(bool IsPopup = false);
     }
 }

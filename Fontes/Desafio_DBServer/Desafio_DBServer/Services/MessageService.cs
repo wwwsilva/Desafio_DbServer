@@ -18,35 +18,6 @@ namespace Desafio_DBServer.Services
 			catch { }
 		}
 
-		public async Task<bool> ShowMessage(string title, string message, string accept, string cancel)
-		{
-			bool retorno = false;
-			try
-			{
-				retorno = await GetNavigationPage().DisplayAlert(title, message, accept, cancel);
-			}
-			catch { }
-			return retorno;
-		}
-
-		public async Task ShowMessageException(string message, Exception ex)
-		{
-			try
-			{
-				string exMessage = string.Empty;
-				if (ex != null)
-				{
-					exMessage = ex.Message;
-				}
-
-				if (!string.IsNullOrWhiteSpace(exMessage))
-					await GetNavigationPage().DisplayAlert("Problema", message + Environment.NewLine + Environment.NewLine + "Mensagem: " + Environment.NewLine + exMessage, "OK");
-				else
-					await GetNavigationPage().DisplayAlert("Problema", message, "OK");
-			}
-			catch { }
-		}
-
 		private Page GetNavigationPage()
 		{
 			if (Application.Current.MainPage is MasterDetailPage)
