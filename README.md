@@ -18,4 +18,5 @@ Neste App serão encontradas três telas:
 	Para as animações utilizei apenas as funcionalidades já existentes no Xamarin Forms como FadeTo
 
 
-![Tela de Entrada](https://github.com/wwwsilva/Desafio_DbServer/blob/main/Screenshots/Android/Tela%20Inicial%20-%20P%C3%B3s%20Anima%C3%A7%C3%A3o.jpg =250x)
+
+<img src="https://github.com/wwwsilva/Desafio_DbServer/blob/main/Screenshots/Android/Tela%20Inicial%20-%20P%C3%B3s%20Anima%C3%A7%C3%A3o.jpg" alt="drawing" width="200"/>
