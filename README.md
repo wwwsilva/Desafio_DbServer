@@ -10,8 +10,6 @@ Utilizando a arquitetura MVVM, neste aplicativo serão encontradas três telas:
 	2. Tela de Listagem de Pokemons com Filtro.  
 	3. Tela de Detalhes do Pokemon.  
 
-Espero que gostem e que olhem para o resultado e para o código com esmero, assim como foi o desenvolvimento nesses dois dias.
-
 -----------------------------------
 
 ### TELAS
@@ -61,9 +59,3 @@ Infelizmente não consegui deixar a injeção de dependências como eu queria a 
 
 ### IMPORTANTE
 **Se for executar em UWP, a versão mínima é a 1809 (build 17763).**
-
-
----------
-
-Agradeço a oportunidade de mostrar meu trabalho e espero que em um futuro próximo estejamos trabalhando juntos em grandes projetos.
- ; D
